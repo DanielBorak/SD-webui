@@ -136,6 +136,6 @@ else
 fi
 
 printf "\n%s\n" "${delimiter}"
-printf "Launching launch.py..."
+printf "Launching edited launch.py..."
 printf "\n%s\n" "${delimiter}"
 "${python_cmd}" "${LAUNCH_SCRIPT}"
