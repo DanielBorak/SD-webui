@@ -1,4 +1,4 @@
-numpy==1.21.16
+numpy==1.21.6
 transformers==4.19.2
 diffusers==0.3.0
 basicsr==1.4.2
