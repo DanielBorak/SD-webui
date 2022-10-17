@@ -98,9 +98,10 @@ def git_clone(url, dir, name, commithash=None):
 
 
 def prepare_enviroment():
-    torch_command = os.environ.get('TORCH_COMMAND', "pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 --extra-index-url https://download.pytorch.org/whl/cu113")
     requirements_file = os.environ.get('REQS_FILE', "requirements_versions.txt")
     run_pip(f"install -r {requirements_file}", "requirements for Web UI")
+    
+    torch_command = os.environ.get('TORCH_COMMAND', "pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 --extra-index-url https://download.pytorch.org/whl/cu113")
     
     commandline_args = os.environ.get('COMMANDLINE_ARGS', "")
 
