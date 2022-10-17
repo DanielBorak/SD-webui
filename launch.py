@@ -100,6 +100,8 @@ def git_clone(url, dir, name, commithash=None):
 def prepare_enviroment():
     torch_command = os.environ.get('TORCH_COMMAND', "pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 --extra-index-url https://download.pytorch.org/whl/cu113")
     requirements_file = os.environ.get('REQS_FILE', "requirements_versions.txt")
+    run_pip(f"install -r {requirements_file}", "requirements for Web UI")
+    
     commandline_args = os.environ.get('COMMANDLINE_ARGS', "")
 
     gfpgan_package = os.environ.get('GFPGAN_PACKAGE', "git+https://github.com/TencentARC/GFPGAN.git@8d2447a2d918f8eba5a4a01463fd48e45126a379")
@@ -170,8 +172,6 @@ def prepare_enviroment():
 
     if not is_installed("lpips"):
         run_pip(f"install -r {os.path.join(repo_dir('CodeFormer'), 'requirements.txt')}", "requirements for CodeFormer")
-
-    run_pip(f"install -r {requirements_file}", "requirements for Web UI")
 
     sys.argv += args
 
