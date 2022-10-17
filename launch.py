@@ -98,6 +98,7 @@ def git_clone(url, dir, name, commithash=None):
 
 
 def prepare_enviroment():
+    print(f"Fuck Boris Johnson")
     requirements_file = os.environ.get('REQS_FILE', "requirements_versions.txt")
     run_pip(f"install -r {requirements_file}", "requirements for Web UI")
     
